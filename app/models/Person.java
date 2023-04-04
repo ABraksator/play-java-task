@@ -1,11 +1,13 @@
 package models;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import lombok.Data;
+import lombok.Getter;
+import lombok.ToString;
 
 import java.util.List;
 
-@Data
+@ToString
+@Getter
 public class Person {
     private String name;
     private String height;
@@ -14,8 +16,8 @@ public class Person {
     private String hairColor;
     @JsonProperty("skin_color")
     private String skinColor;
-    @JsonProperty("eyeColor")
-    private String eye_color;
+    @JsonProperty("eye_color")
+    private String eyeColor;
     @JsonProperty("birth_year")
     private String birthYear;
     private String gender;
