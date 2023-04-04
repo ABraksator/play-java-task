@@ -4,6 +4,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.typesafe.config.Config;
 import play.libs.ws.WSClient;
 import play.libs.ws.WSResponse;
+
 import javax.inject.Inject;
 import java.util.concurrent.CompletionStage;
 
@@ -27,4 +28,15 @@ public class StartWarsClient {
                 .thenApply(WSResponse::asJson);
     }
 
+    public CompletionStage<JsonNode> getSelectPlanet(int id) {
+        return ws.url(apiUrl + "planets/" + id)
+                .get()
+                .thenApply(WSResponse::asJson);
+    }
+
+    public CompletionStage<JsonNode> getPerson(String url){
+        return ws.url(url)
+                .get()
+                .thenApply(WSResponse::asJson);
+    }
 }
