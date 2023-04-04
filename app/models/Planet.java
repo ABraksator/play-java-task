@@ -24,12 +24,4 @@ public class Planet {
     private String surfaceWater;
     private String terrain;
     private String url;
-
-    public String getName() {
-        return name;
-    }
-
-    public List<String> getResidents() {
-        return residents;
-    }
 }
