@@ -44,12 +44,8 @@ public class HomeController extends Controller {
         });
     }
 
-    public Result incorrectParameter(String text) {
-        return ok("Incorrect parameter, use integer!");
-    }
-
     public CompletionStage<Result> selectPlanet(int id) {
-        List<Person> personList = new ArrayList<Person>();
+        List<Person> personList = new ArrayList<>();
 
         return this.client.getSelectPlanet(id).thenApply(jsonPlanet -> {
             Planet planet = Json.fromJson(jsonPlanet, Planet.class);
