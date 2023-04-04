@@ -1,7 +1,10 @@
 package models;
 
+import lombok.ToString;
+
 import java.util.List;
 
+@ToString
 public class Universe {
 
     private Planet planet;
@@ -10,25 +13,5 @@ public class Universe {
     public Universe(Planet planet, List<Person> persons) {
         this.planet = planet;
         this.persons = persons;
-    }
-
-    public Planet getPlanet() {
-        return planet;
-    }
-
-    public void setPlanet(Planet planet) {
-        this.planet = planet;
-    }
-
-    public void setPerson(List<Person> personsList){
-        this.persons = personsList;
-    }
-
-    @Override
-    public String toString() {
-        return "Universe{" +
-                planet +
-                "," + persons +
-                '}';
     }
 }

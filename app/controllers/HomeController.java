@@ -59,7 +59,7 @@ public class HomeController extends Controller {
 
             List<String> residentsUrls = planet.getResidents();
 
-            List<CompletableFuture<?>> futures = new ArrayList<>();
+            List<CompletableFuture<Result>> futures = new ArrayList<>();
             if (residentsUrls != null)
                 for (String url : residentsUrls) {
                     futures.add(this.client.getPerson(url).thenApply(jsonPerson -> {
@@ -69,7 +69,7 @@ public class HomeController extends Controller {
                     }).toCompletableFuture());
                 }
 
-            CompletableFuture<?> combinedFuture = CompletableFuture.allOf(futures.toArray(new CompletableFuture[0]));
+            CompletableFuture<Void> combinedFuture = CompletableFuture.allOf(futures.toArray(new CompletableFuture[0]));
 
             try {
                 combinedFuture.get();

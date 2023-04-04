@@ -19,3 +19,4 @@ libraryDependencies += "com.fasterxml.jackson.dataformat" % "jackson-dataformat-
 libraryDependencies += "com.fasterxml.jackson.core" % "jackson-databind" % jacksonDatatype
 libraryDependencies += "com.fasterxml.jackson.datatype" % "jackson-datatype-jdk8" % jacksonDatatype
 libraryDependencies += "com.fasterxml.jackson.datatype" % "jackson-datatype-jsr310" % jacksonDatatype
+libraryDependencies += "org.projectlombok" % "lombok" % "1.16.16"
